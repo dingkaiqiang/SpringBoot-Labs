@@ -17,6 +17,10 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
+
+    /**
+     * 通过@ConfigurationProperties(prefix = "order") 读取配置文件
+     */
     @Component
     public class OrderPropertiesCommandLineRunner implements CommandLineRunner {
 
@@ -33,6 +37,9 @@ public class Application {
 
     }
 
+    /**
+     * 通过@Value 注解读取文件
+     */
     @Component
     public class ValueCommandLineRunner implements CommandLineRunner {
 
@@ -41,6 +48,8 @@ public class Application {
 //        @NacosValue(value = "${order.pay-timeout-seconds}")
         @Value(value = "${order.pay-timeout-seconds}")
         private Integer payTimeoutSeconds;
+        @Value(value = "${server.port}")
+        private Integer serverPost;
 
 //        @NacosValue(value = "${order.create-frequency-seconds}")
         @Value(value = "${order.create-frequency-seconds}")
@@ -50,6 +59,7 @@ public class Application {
         public void run(String... args) {
             logger.info("payTimeoutSeconds:" + payTimeoutSeconds);
             logger.info("createFrequencySeconds:" + createFrequencySeconds);
+            logger.info("serverPost:" + serverPost);
         }
     }
 
