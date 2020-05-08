@@ -56,7 +56,8 @@
 <!--        <module>lab-43</module>-->
 
         <!--  spring boot nacos -->
-        <module>lab-44</module>
+<!--        <module>lab-44</module>-->
+        <!--  spring boot nacos -->
 <!--        <module>lab-45</module>-->
 <!--        <module>lab-46</module>-->
 <!--        <module>lab-47</module>-->
@@ -75,10 +76,12 @@
 <!--        <module>labx-02</module>-->
 <!--        <module>labx-03</module>-->
 <!--        <module>labx-04</module>-->
+        <!--  spring cloud nacos -->
 <!--        <module>labx-05</module>-->
+        <!--  spring cloud nacos -->
 <!--        <module>labx-06</module>-->
 <!--        <module>labx-07</module>-->
-<!--        <module>labx-08</module>-->
+        <module>labx-08</module>
 <!--        <module>labx-09</module>-->
 <!--        <module>labx-10</module>-->
 <!--        <module>labx-11</module>-->
