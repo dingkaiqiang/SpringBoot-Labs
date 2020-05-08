@@ -54,7 +54,9 @@
 <!--        <module>lab-41</module>-->
 <!--        <module>lab-42</module>-->
 <!--        <module>lab-43</module>-->
-<!--        <module>lab-44</module>-->
+
+        <!--  spring boot nacos -->
+        <module>lab-44</module>
 <!--        <module>lab-45</module>-->
 <!--        <module>lab-46</module>-->
 <!--        <module>lab-47</module>-->
@@ -91,7 +93,7 @@
 <!--        <module>labx-20</module>-->
 <!--        <module>labx-21</module>-->
 
-        <module>labx-22</module>
+<!--        <module>labx-22</module>-->
     </modules>
 
 </project>
