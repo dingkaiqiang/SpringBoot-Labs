@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway-application
+    name: gateway-application-demo03-config-nacos
 
   cloud:
     nacos:

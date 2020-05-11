@@ -29,6 +29,3 @@ spring:
           url-expression: "'lb://' + serviceId" # 路由的目标地址的表达式，默认为 "'lb://' + serviceId"
 
     # Nacos 作为注册中心的配置项
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848 # Nacos 服务器地址
