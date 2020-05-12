@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: client-boot # Spring 应用名
+server:
+  port: 51001  # 服务器端口。默认为 8080
