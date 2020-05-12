@@ -24,6 +24,6 @@ spring:
             - StripPrefix=1
       # 默认过滤器，对应 FilterDefinition 数组
       default-filters:
-        - name: Auth
-          args:
-            token-header-name: access-token
+        - name: Auth #这里我们设置为 Auth，因为 Gateway 默认使用 XXXGatewayFilterFactory 的前缀 XXX 为名字，因此 AuthGatewayFilterFactory 就是 Auth。
+          args: # 过滤器的配置参数，对应 Map 类。这里我们设置 token-header-name 配置项为
+            token-header-name: access-token # 表示从请求 Header access-token 获得认证 Token。

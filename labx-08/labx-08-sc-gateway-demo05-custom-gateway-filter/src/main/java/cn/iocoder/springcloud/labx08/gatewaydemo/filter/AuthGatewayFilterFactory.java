@@ -26,7 +26,7 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
 
     @Override
     public GatewayFilter apply(Config config) {
-        // token 和 userId 的映射
+        // <1> token 和 userId 的映射
         Map<String, Integer> tokenMap = new HashMap<>();
         tokenMap.put("yunai", 1);
 
@@ -35,21 +35,21 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
 
             @Override
             public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-                // 获得 token
+                // <2> 获得 token
                 ServerHttpRequest request = exchange.getRequest();
                 HttpHeaders headers = request.getHeaders();
                 String token = headers.getFirst(config.getTokenHeaderName());
 
-                // 如果没有 token，则不进行认证。因为可能是无需认证的 API 接口
+                // <3> 如果没有 token，则不进行认证。因为可能是无需认证的 API 接口
                 if (!StringUtils.hasText(token)) {
                     return chain.filter(exchange);
                 }
 
-                // 进行认证
+                // <4> 进行认证
                 ServerHttpResponse response = exchange.getResponse();
                 Integer userId = tokenMap.get(token);
 
-                // 通过 token 获取不到 userId，说明认证不通过
+                // <5> 通过 token 获取不到 userId，说明认证不通过
                 if (userId == null) {
                     // 响应 401 状态码
                     response.setStatusCode(HttpStatus.UNAUTHORIZED);
@@ -58,7 +58,7 @@ public class AuthGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthG
                     return response.writeWith(Flux.just(buffer));
                 }
 
-                // 认证通过，将 userId 添加到 Header 中
+                // <6> 认证通过，将 userId 添加到 Header 中
                 request = request.mutate().header(config.getUserIdHeaderName(), String.valueOf(userId))
                         .build();
                 return chain.filter(exchange.mutate().request(request).build());

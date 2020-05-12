@@ -12,7 +12,7 @@ public class FallbackController {
 
     private Logger logger = LoggerFactory.getLogger(FallbackController.class);
 
-    @GetMapping("/fallback")
+    @GetMapping("/fallbackUrl")
     public String fallback(ServerWebExchange exchange) {
 //        URI requestUrl = exchange.getAttribute(ServerWebExchangeUtils.GATEWAY_REQUEST_URL_ATTR);
         Throwable executionException = exchange.getAttribute(ServerWebExchangeUtils.HYSTRIX_EXECUTION_EXCEPTION_ATTR);

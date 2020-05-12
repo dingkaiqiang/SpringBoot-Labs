@@ -18,4 +18,4 @@ spring:
             - name: Hystrix
               args:
                 name: fallbackcmd # 对应的 Hystrix Command 名字
-                fallbackUri: forward:/fallback # 处理 Hystrix fallback 的情况，重定向到指定地址
+                fallbackUri: forward:/fallbackUrl # 处理 Hystrix fallback 的情况，重定向到指定地址

@@ -75,7 +75,7 @@
 <!--        <module>labx-01</module>-->
 <!--        <module>labx-02</module>-->
 <!--        <module>labx-03</module>-->
-<!--        <module>labx-04</module>-->
+        <module>labx-04</module>
         <!--  spring cloud nacos -->
 <!--        <module>labx-05</module>-->
         <!--  spring cloud nacos -->
